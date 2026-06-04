@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_add_to_cart_scroll_popup" inherit_id="website_sale.product" name="Add to Cart Scroll Popup">
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <t t-set="popup_enabled" t-value="request.website.show_bottom_add_to_cart_popup"/>
+            <t t-set="popup_style" t-value="request.website.popup_style"/>
+            <t t-if="popup_enabled">
+
+                <div id="pf_scroll_popup_wrapper" t-att-data-popup-style="popup_style">
+                    <t t-if="popup_style == 'style1'">
+                        <div id="pf_scroll_popup" class="pf-scroll-popup pf-popup-style1">
+
+                            <img t-att-src="'/web/image/product.template/%s/image_128' % product.id"
+                                 t-att-alt="product.name"
+                                 class="pf-popup-img pf-dynamic-image"/>
+
+                            <div class="pf-popup-info">
+
+                                <div class="pf-popup-name pf-dynamic-name">
+                                    <t t-esc="product.name"/>
+                                </div>
+
+                                <div class="pf-popup-variant text-muted small pf-dynamic-variant" style="font-size: 12px; margin-top: 2px; font-weight: 500;">
+                                    </div>
+
+                                <div class="pf-popup-price-container" style="margin-top: 4px; display: flex; flex-direction: row; align-items: center; gap: 8px; flex-wrap: nowrap;">
+                                    <span class="pf-dynamic-price font-weight-bold" style="color: #212529; font-size: 14px; white-space: nowrap;">
+                                        <t t-esc="product.currency_id.symbol"/><t t-esc="'%.2f' % product.list_price"/>
+                                    </span>
+                                    <span class="pf-dynamic-compare-price text-muted small" style="text-decoration: line-through; font-size: 12px; white-space: nowrap; display: none;"></span>
+                                </div>
+
+                                <div class="pf-popup-error text-danger small font-weight-bold" style="display: none; font-size: 12px; margin-top: 2px;">
+                                    This combination does not exist.
+                                </div>
+
+                            </div>
+
+                            <button type="button"
+                                    class="btn btn-primary pf-add-to-cart-btn"
+                                    t-att-data-product-id="product.id">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </t>
+
+                    <t t-if="popup_style == 'style2'">
+                        <div id="pf_scroll_popup" class="pf-scroll-popup pf-popup-style2">
+                            <img t-att-src="'/web/image/product.template/%s/image_128' % product.id"
+                                 t-att-alt="product.name"
+                                 class="pf-popup-img pf-dynamic-image"/>
+
+                            <div class="pf-popup-info">
+
+                                <div class="pf-popup-name pf-dynamic-name">
+                                    <t t-esc="product.name"/>
+                                </div>
+
+                                <div class="pf-popup-variant text-muted small pf-dynamic-variant" style="font-size: 12px; margin-top: 2px; font-weight: 500;">
+                                    </div>
+
+                                <div class="pf-popup-price-container" style="margin-top: 4px; display: flex; flex-direction: row; align-items: center; gap: 8px; flex-wrap: nowrap;">
+                                    <span class="pf-dynamic-price font-weight-bold" style="color: #212529; font-size: 14px; white-space: nowrap;">
+                                        <t t-esc="product.currency_id.symbol"/><t t-esc="'%.2f' % product.list_price"/>
+                                    </span>
+                                    <span class="pf-dynamic-compare-price text-muted small" style="text-decoration: line-through; font-size: 12px; white-space: nowrap; display: none;"></span>
+                                </div>
+
+                                <div class="pf-popup-error text-danger small font-weight-bold" style="display: none; font-size: 12px; margin-top: 2px;">
+                                    This combination does not exist.
+                                </div>
+
+                            </div>
+
+                            <div class="pf-popup-rating">
+                                <t t-if="product.rating_count">
+                                    <span class="text-warning">
+                                        <t t-set="val" t-value="product.rating_avg or 0.0"/>
+                                        <t t-foreach="range(1, 6)" t-as="num">
+                                            <i t-if="val &gt;= num" class="fa fa-star"/>
+                                            <i t-if="(val &lt; num) and (val &gt;= num - 0.5)" class="fa fa-star-half-o"/>
+                                            <i t-if="val &lt; num - 0.5" class="fa fa-star-o"/>
+                                        </t>
+                                    </span>
+                                    <small class="text-muted">(<t t-esc="product.rating_count"/> Review)</small>
+                                </t>
+                                <t t-if="not product.rating_count">
+                                    <span class="text-warning">
+                                        <i class="fa fa-star-o"/><i class="fa fa-star-o"/><i class="fa fa-star-o"/><i class="fa fa-star-o"/><i class="fa fa-star-o"/>
+                                    </span>
+                                    <small class="text-muted">(0 Review)</small>
+                                </t>
+                            </div>
+
+                            <button type="button"
+                                    class="btn btn-primary pf-add-to-cart-btn"
+                                    t-att-data-product-id="product.id">
+                                Add to Cart
+                            </button>
+                        </div>
+
+                    </t>
+
+                    <t t-if="popup_style == 'style3'">
+
+                        <div id="pf_scroll_popup" class="pf-scroll-popup pf-popup-style3">
+                            <img t-att-src="'/web/image/product.template/%s/image_128' % product.id"
+                                 t-att-alt="product.name"
+                                 class="pf-popup-img pf-dynamic-image"/>
+
+                            <div class="pf-popup-info">
+
+                                <div class="pf-popup-name pf-dynamic-name">
+                                    <t t-esc="product.name"/>
+                                </div>
+
+                                <div class="pf-popup-variant text-muted small pf-dynamic-variant" style="font-size: 12px; margin-top: 2px; font-weight: 500;">
+                                    </div>
+
+                                <div class="pf-popup-price-container" style="margin-top: 4px; display: flex; flex-direction: row; align-items: center; gap: 8px; flex-wrap: nowrap;">
+                                    <span class="pf-dynamic-price font-weight-bold" style="color: #212529; font-size: 14px; white-space: nowrap;">
+                                        <t t-esc="product.currency_id.symbol"/><t t-esc="'%.2f' % product.list_price"/>
+                                    </span>
+                                    <span class="pf-dynamic-compare-price text-muted small" style="text-decoration: line-through; font-size: 12px; white-space: nowrap; display: none;"></span>
+                                </div>
+
+                                <div class="pf-popup-error text-danger small font-weight-bold" style="display: none; font-size: 12px; margin-top: 2px;">
+                                    This combination does not exist.
+                                </div>
+
+                            </div>
+
+                            <button type="button"
+                                    class="btn btn-primary pf-add-to-cart-btn"
+                                    t-att-data-product-id="product.id">
+                                Add to Cart
+                            </button>
+
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
+
