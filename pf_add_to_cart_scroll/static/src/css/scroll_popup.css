@@ -1,0 +1,367 @@
+/* ---- Base popup ---- */
+.pf-scroll-popup {
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);
+    display: none;
+    align-items: center;
+    gap: 12px;
+    animation: pf-slide-up 0.3s ease;
+}
+
+.pf-scroll-popup.pf-popup-visible {
+    display: flex !important;
+}
+
+@keyframes pf-slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pf-popup-img {
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.pf-popup-info {
+    flex: 1;
+}
+
+.pf-popup-name {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.pf-popup-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.pf-popup-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   STYLE 1
+========================================================= */
+.pf-popup-style1 {
+    left: 10px;
+    bottom: 10px;
+    width: 320px;
+    padding: 12px;
+    border-radius: 8px;
+    flex-direction: row;
+}
+
+.pf-popup-style1 .pf-popup-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+}
+
+/* =========================================================
+   STYLE 2
+========================================================= */
+.pf-popup-style2 {
+    bottom: 15px;
+    width: calc(100% - 120px);
+    max-width: 1500px;
+    left: 60px;
+    right: 60px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    flex-direction: row;
+    border: 1px solid #e5e5e5;
+}
+
+/* Style 2 Image */
+.pf-popup-style2 .pf-popup-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+}
+
+/* Desktop Layout */
+.pf-popup-style2 .pf-popup-info {
+    flex: 0 0 auto;
+}
+
+.pf-popup-style2 .pf-popup-rating {
+    flex: 1;
+    text-align: center;
+}
+
+.pf-popup-style2 .pf-popup-rating span {
+    color: #e2a400;
+    font-size: 13px;
+}
+
+.pf-popup-style2 .pf-popup-rating small {
+    color: #888;
+    margin-left: 4px;
+}
+
+/* =========================================================
+   MOBILE STYLE 2
+========================================================= */
+@media (max-width: 767.98px) {
+
+    .pf-popup-style2 {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 8px 16px;
+    }
+
+    .pf-popup-style2.pf-popup-visible {
+        display: grid !important;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2px 12px;
+    }
+
+    .pf-popup-style2 .pf-popup-img {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    .pf-popup-style2 .pf-popup-info {
+        grid-column: 2;
+        grid-row: 1;
+        flex: none;
+    }
+
+    .pf-popup-style2 .pf-popup-rating {
+        grid-column: 2;
+        grid-row: 2;
+        flex: none;
+        text-align: left !important;
+        margin-top: -2px;
+    }
+
+    .pf-popup-style2 .pf-add-to-cart-btn {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        padding: 6px 14px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   STYLE 3
+========================================================= */
+.pf-popup-style3 {
+    right: 10px;
+    bottom: 10px;
+    width: 160px;
+    padding: 10px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pf-popup-style3 .pf-popup-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.pf-popup-style3 .pf-popup-btn {
+    width: 100%;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* ---- Base popup ---- *!*/
+/*.pf-scroll-popup {*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    z-index: 9999;*/
+/*    background: #fff;*/
+/*    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);*/
+/*    display: none;*/
+/*    align-items: center;*/
+/*    gap: 12px;*/
+/*    animation: pf-slide-up 0.3s ease;*/
+/*}*/
+
+/*.pf-scroll-popup.pf-popup-visible {*/
+/*    display: flex !important;*/
+/*}*/
+
+/*@keyframes pf-slide-up {*/
+/*    from { transform: translateY(100%); opacity: 0; }*/
+/*    to   { transform: translateY(0);    opacity: 1; }*/
+/*}*/
+
+/*.pf-popup-img {*/
+/*    object-fit: contain;*/
+/*    flex-shrink: 0;*/
+/*}*/
+
+/*.pf-popup-info {*/
+/*    flex: 1;*/
+/*}*/
+
+/*.pf-popup-name {*/
+/*    font-weight: 600;*/
+/*    font-size: 14px;*/
+/*    line-height: 1.2;*/
+/*}*/
+
+/*.pf-popup-price {*/
+/*    font-size: 16px;*/
+/*    font-weight: 700;*/
+/*    color: #333;*/
+/*}*/
+
+/*.pf-popup-btn {*/
+/*    white-space: nowrap;*/
+/*    flex-shrink: 0;*/
+/*}*/
+
+/*!* ---- Style 1: small card bottom-left ---- *!*/
+/*.pf-popup-style1 {*/
+/*    left: 10px;*/
+/*    bottom: 10px;*/
+/*    width: 320px;*/
+/*    padding: 12px;*/
+/*    border-radius: 8px;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/*.pf-popup-style1 .pf-popup-img {*/
+/*    width: 70px;*/
+/*    height: 70px;*/
+/*    border-radius: 4px;*/
+/*}*/
+
+/*!* ---- Style 2: full-width bottom bar ---- *!*/
+/*.pf-popup-style2 {*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    padding: 10px 24px;*/
+/*    border-radius: 0;*/
+/*    flex-direction: row;*/
+/*    border-left: none;*/
+/*    border-right: none;*/
+/*    border-bottom: none;*/
+/*}*/
+
+/*.pf-popup-style2 .pf-popup-img {*/
+/*    width: 48px;*/
+/*    height: 48px;*/
+/*    border-radius: 4px;*/
+/*}*/
+
+/*!* Desktop layout rules for Style 2 *!*/
+/*.pf-popup-style2 .pf-popup-info {*/
+/*    flex: 0 0 auto;*/
+/*}*/
+
+/*.pf-popup-style2 .pf-popup-rating {*/
+/*    flex: 1;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.pf-popup-style2 .pf-popup-rating span {*/
+/*    color: #e2a400;*/
+/*    font-size: 13px;*/
+/*}*/
+
+/*.pf-popup-style2 .pf-popup-rating small {*/
+/*    color: #888;*/
+/*    margin-left: 4px;*/
+/*}*/
+
+/*!* Mobile Responsive Overrides for Style 2 *!*/
+/*@media (max-width: 767.98px) {*/
+/*    .pf-popup-style2.pf-popup-visible {*/
+/*        display: grid !important;*/
+/*        grid-template-columns: auto 1fr auto;*/
+/*        align-items: center;*/
+/*        padding: 8px 16px;*/
+/*        gap: 2px 12px;*/
+/*    }*/
+
+/*    .pf-popup-style2 .pf-popup-img {*/
+/*        grid-column: 1;*/
+/*        grid-row: 1 / span 2;*/
+/*    }*/
+
+/*    .pf-popup-style2 .pf-popup-info {*/
+/*        grid-column: 2;*/
+/*        grid-row: 1;*/
+/*        flex: none;*/
+/*    }*/
+
+/*    .pf-popup-style2 .pf-popup-rating {*/
+/*        grid-column: 2;*/
+/*        grid-row: 2;*/
+/*        flex: none;*/
+/*        text-align: left !important;*/
+/*        margin-top: -2px;*/
+/*    }*/
+
+/*    .pf-popup-style2 .pf-add-to-cart-btn {*/
+/*        grid-column: 3;*/
+/*        grid-row: 1 / span 2;*/
+/*        padding: 6px 14px;*/
+/*        font-size: 14px;*/
+/*    }*/
+/*}*/
+
+/*!* ---- Style 3: small card bottom-right ---- *!*/
+/*.pf-popup-style3 {*/
+/*    right: 10px;*/
+/*    bottom: 10px;*/
+/*    width: 160px;*/
+/*    padding: 10px;*/
+/*    border-radius: 8px;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.pf-popup-style3 .pf-popup-img {*/
+/*    width: 100px;*/
+/*    height: 100px;*/
+/*    object-fit: contain;*/
+/*}*/
+
+/*.pf-popup-style3 .pf-popup-btn {*/
+/*    width: 100%;*/
+/*    font-size: 12px;*/
+/*    padding: 4px 8px;*/
+/*}*/
