@@ -1,0 +1,11 @@
+<odoo>
+
+    <template id="assets_frontend" name="live portal assets" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <!-- JS -->
+            <script type="text/javascript" src="/pf_add_to_cart_scroll/static/src/js/scroll_popup.js"></script>
+            <link rel="stylesheet" type="text/css" href="/pf_add_to_cart_scroll/static/src/css/scroll_popup.css"></link>
+
+        </xpath>
+    </template>
+</odoo>
